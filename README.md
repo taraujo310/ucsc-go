@@ -18,6 +18,8 @@ Para cada material adicionado neste repositório, colocarei no índice abaixo a 
 ### Semana 1
 
 - [Getting Started](https://go.dev/doc/tutorial/getting-started.html)
-- [Hello World](./001-hello-world/README.md)
-- [Quotation](./002-quotation/README.md)
 - [História do GO](./history.md)
+- [Hello World](./001-hello-world/README.md): sintaxe e estrutura básica de um programa Go
+- [Quotation](./002-quotation/README.md): utilização de pacotes externos
+- [Área do Círculo 1](./003-circle/README.md): declaração de variáveis e aritmética básica
+- [Área do Círculo 2](./003-circle-2/README.md): uso de constante e pacote externo
