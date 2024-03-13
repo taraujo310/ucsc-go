@@ -21,6 +21,7 @@ func main() {
 ## Explicação
 
 - A palavra reservada `var` é utilizada para declaração de variáveis. Já a palavra reservada `const` é utilizada para declarar constantes. `float32` define o tipo da variável. Poderia ser `float64` também.
+- Variáveis não definidas, são automaticamente definidas com o valor 0.
 - A função `fmt.Print` imprime um texto sem pular linha.
 - A função `fmt.Scanf` lê um valor pela entrada padrão de dados:
   - A formatação `"%f"` faz com que o Scanf espere por um valor do tipo float
