@@ -1,4 +1,67 @@
-# Temperature
+# Temperature - Loops
+
+## Sintaxe For
+
+```go
+
+for <declaration expression>; <conditional expression>; <incremental expression> {
+  // code
+}
+
+```
+
+Sendo que cada uma dessas expressões são opcionais. E assim temos:
+
+### Infinite Loop
+
+```go
+for {
+  // code
+}
+```
+
+### While Loop
+
+```go
+var i = 1;
+
+for i <= 3 {
+  // code
+
+  i += 1
+}
+```
+
+### For Loop
+
+```go
+for i = 1; i <= 3; i++ {
+  // code
+}
+```
+
+### break & continue
+
+Go aceita as palavras reservadas `break` para interrupção do loop e `continue` para seguir para a próxima iteração do loop
+
+### For-Each loop
+
+Veremos um pouco mais dessa sintaxe posteriomente mas podemos ter `for-each loop`, i.e., iterando através de uma lista:
+
+```go
+strings := []string{"hello", "world"}
+
+for i, s := range strings {
+  fmt.Println(i, s)
+}
+```
+
+```bash
+0 hello
+1 world
+```
+
+## Exemplo
 
 ```go
 package main
@@ -69,67 +132,6 @@ Outra questão relacionada aos tipos é a divisão `5.0/9.0`. Caso tivesse feito
 Perceba que no exemplo original, K&R utilizam o `while loop`. Em Go, `while` não existe pois você pode usar o `for loop` como while, que é como estamos utilizando nesse exemplo.
 
 Em Go, as chaves são obrigatórias em todas as estruturas de controle de fluxo.
-
-## Sintaxe For
-
-```go
-
-for <declaration expression>; <conditional expression>; <incremental expression> {
-  // code
-}
-
-```
-
-Sendo que cada uma dessas expressões são opcionais. E assim temos:
-
-### Infinite Loop
-
-```go
-for {
-  // code
-}
-```
-
-### While Loop
-
-```go
-var i = 1;
-
-for i <= 3 {
-  // code
-
-  i += 1
-}
-```
-
-### For Loop
-
-```go
-for i = 1; i <= 3; i++ {
-  // code
-}
-```
-
-### break & continue
-
-Go aceita as palavras reservadas `break` para interrupção do loop e `continue` para seguir para a próxima iteração do loop
-
-### For-Each loop
-
-Veremos um pouco mais dessa sintaxe posteriomente mas podemos ter `for-each loop`, i.e., iterando através de uma lista:
-
-```go
-strings := []string{"hello", "world"}
-
-for i, s := range strings {
-  fmt.Println(i, s)
-}
-```
-
-```bash
-0 hello
-1 world
-```
 
 ## Exercício Sugerido
 
