@@ -23,3 +23,5 @@ Para cada material adicionado neste repositório, colocarei no índice abaixo a 
 - [Quotation](./002-quotation/README.md): utilização de pacotes externos
 - [Área do Círculo 1](./003-circle/README.md): declaração de variáveis e aritmética básica
 - [Área do Círculo 2](./003-circle-2/README.md): uso de constante e pacote externo
+- [Maratona](./004-marathon/README.md): conversão de tipos entre inteiro e float
+- [Temperature](./005-temperature/README.md): sintaxe de loops
