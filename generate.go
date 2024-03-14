@@ -46,6 +46,15 @@ func getLastDirNumber() string {
 	return fmt.Sprintf("%03d-", currentNumber+1)
 }
 
+func logAction(action string, message string) {
+	// cRed := "\033[31m"
+	cGreen := "\033[32m"
+	reset := "\033[0m"
+	bold := "\033[1m"
+
+	fmt.Println(bold, cGreen, action, reset, " ", message)
+}
+
 func createFile(filepath string, content string) {
 	goFile, err := os.Create(filepath)
 
@@ -63,10 +72,30 @@ func createFile(filepath string, content string) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("file ", filepath)
+	logAction("create file", filepath)
 }
 
-func scaffoldClassDirectory(className string) {
+func insertClassIntoSummary(className string, readmeFilepath string, description string) {
+	f, err := os.OpenFile("./README.md", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	title := cases.Title(language.English, cases.Compact).String(className)
+
+	topic := "\n- [" + title + "](" + readmeFilepath + "): " + description + "\n"
+
+	if _, err := f.WriteString(topic); err != nil {
+		log.Println(err)
+	}
+
+	defer f.Close()
+
+	logAction("append in to summary", title)
+}
+
+func scaffoldClassDirectory(className string, description string) {
 	number := getLastDirNumber()
 	newDir := number + className
 
@@ -81,7 +110,8 @@ func scaffoldClassDirectory(className string) {
 	readmeFilepath := completePath + "/README.md"
 
 	createFile(goFilepath, goBasicSetup())
-	createFile(readmeFilepath, "# " + cases.Title(language.English, cases.Compact).String(className) )
+	createFile(readmeFilepath, "# " + cases.Title(language.English, cases.Compact).String(className))
+	insertClassIntoSummary(className, readmeFilepath, description)
 }
 
 func main() {
@@ -91,7 +121,8 @@ func main() {
 		fmt.Println("missing class name");
 	} else {
 		className := flag.Arg(0)
-		scaffoldClassDirectory(className)
+		description := flag.Arg(1)
+		scaffoldClassDirectory(className, description)
 	}
 
 	os.Exit(0)

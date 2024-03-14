@@ -26,3 +26,7 @@ Para cada material adicionado neste repositório, colocarei no índice abaixo a 
 - [Maratona](./004-marathon/README.md): conversão de tipos entre inteiro e float
 - [Temperature](./005-temperature/README.md): sintaxe de loops
 - [Formats](./006-formats/README.md): formatação de texto
+
+### Semana 2
+
+- [Syntax](./007-syntax/README.md): explicação da sintaxe do Go, como escrever um código executável
