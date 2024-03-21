@@ -30,3 +30,5 @@ Para cada material adicionado neste repositório, colocarei no índice abaixo a 
 ### Semana 2
 
 - [Syntax](./007-syntax/README.md): explicação da sintaxe do Go, como escrever um código executável
+- [Dice](./008-dice/README.md): como gerar números aleatórios
+- [Booleans](./009-booleans/README.md): utilizando formatadores, Sprintf e strings.Repeat
